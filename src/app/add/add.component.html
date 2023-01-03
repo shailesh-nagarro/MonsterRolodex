@@ -1,0 +1,65 @@
+<div class="container">
+  <!-- <p>Form Status: {{ userBasicDetail.status }}</p>
+  <p>Form Date: {{ userBasicDetail.value | json }}</p> -->
+  <div class="left" [formGroup]="userBasicDetail">
+    <!-- Name -->
+    <label class="lableField" for="name">Name*:</label><br>
+    <input class="inputField" type="text" formControlName="nameForm">
+
+    <div class="errorMessage" *ngIf="user && user.invalid && user.touched">Name is required</div>
+    <br><br>
+
+    <!-- UserName -->
+    <label class="lableField" for="username">UserName*: (must be min 5 char long and alphabetic)</label><br>
+    <input class="inputField" type="text" formControlName="userName">
+    <div *ngIf="userName && userName.invalid && (userName.dirty || userName.touched)">
+      <div class="errorMessage" *ngIf=" userName.errors?.['pattern']">User name must be alphabetic only</div>
+      <div class="errorMessage" *ngIf="userName.errors?.['minlength']">
+        User name must be at least 5 characters long.
+      </div>
+      <div class="errorMessage" *ngIf="userName.invalid && userName && !userName.errors?.['minlength'] && !userName.errors?.['pattern']">
+        User name is required
+      </div>
+    </div>
+    <br><br>
+
+    <!-- Email -->
+    <label class="lableField" for="email">Email*:</label><br>
+    <input class="inputField" type="text" [value]="userBasicDetail.get('userEmail')!!.value!!"
+      formControlName="userEmail">
+    <div class="errorMessage" *ngIf="userEmail && userEmail.invalid && userEmail.touched">Valid Email required</div>
+    <br><br>
+    <br>
+
+    <div formGroupName="address">
+      <h2>Address</h2>
+
+      <label class="lableField" for="street">Street: </label><br>
+      <input class="inputField" id="street" type="text" formControlName="street">
+      <br>
+      <br>
+      <label class="lableField" for="city">City: </label><br>
+      <input class="inputField" id="city" type="text" formControlName="city">
+      <br>
+      <br>
+      <label class="lableField" for="state">State: </label><br>
+      <input class="inputField" id="state" type="text" formControlName="state">
+      <br>
+      <br>
+      <label class="lableField" for="zip">Zip Code: </label><br>
+      <input class="inputField" id="zip" type="text" formControlName="zip">
+    </div>
+    <br>
+    <br>
+    <br>
+    <button class="buttonSubmit" [disabled]="!userBasicDetail.valid" (click)="createUser()">Create User</button>
+    <br>
+    <br>
+    <br>
+
+  </div>
+
+
+
+
+</div>

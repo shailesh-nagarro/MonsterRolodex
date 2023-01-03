@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: BigelowRules-Regular;
+    src: url(assets/font/BRRegular.ttf) format("truetype");
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding:10px;
+  text-align: center;
+}
+
+.gradientCover {
+  background-image: linear-gradient(to right, #007c7e , #035b6f);
+}

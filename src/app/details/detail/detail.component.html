@@ -1,0 +1,58 @@
+<button (click)="toggleView(1)">Card View</button>
+<button (click)="toggleView(2)">flip View</button>
+<div *ngIf="!user || onError ;else userDetail">
+  <div class="errorText" *ngIf="!user && !onError">Loading User</div>
+<div class="errorText"  *ngIf="onError">Error on fetching User</div>
+</div>
+<ng-template #userDetail >
+  <div *ngIf="cardView" class="card">
+    <img src="{{image}}" alt="monster" style="width:100%">
+     <div>
+      Id : <strong>{{user.id}}</strong> <br>
+      Name: <strong>{{user.name}}</strong><br>
+      Email: <strong>{{user.email}}</strong><br>
+      Phone: <strong>{{user.phone}}</strong><br>
+      Website: <strong>{{user.website}}</strong><br>
+      Company: <strong>{{user.company.name}} <br> {{user.company.catchPhrase}} <br> {{user.company.bs}}</strong><br>
+     </div>
+    <p class="address">Address</p>
+    Suite: <strong>{{user.address.suite}}</strong><br>
+    City: <strong>{{user.address.city}}</strong><br>
+    Zipcode: <strong>{{user.address.zipcode}}</strong><br>
+    Location: <strong>{{user.address.geo.lat}},{{user.address.geo.lng}}</strong><br>
+    <br>
+    <br>
+    <br>
+
+  </div>
+
+  <div *ngIf="!cardView" class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="{{image}}" alt="Monster" style="width:300px;height:300px;">
+      </div>
+      <div class="flip-card-back">
+        <div>
+          <br>
+          <br>
+          <br>
+          Id : <strong>{{user.id}}</strong> <br>
+          Name: <strong>{{user.name}}</strong><br>
+          Email: <strong>{{user.email}}</strong><br>
+          Phone: <strong>{{user.phone}}</strong><br>
+          Website: <strong>{{user.website}}</strong><br>
+          Company: <strong>{{user.company.name}} <br> {{user.company.catchPhrase}} <br> {{user.company.bs}}</strong><br>
+         </div>
+        <p class="address">Address</p>
+        Suite: <strong>{{user.address.suite}}</strong><br>
+        City: <strong>{{user.address.city}}</strong><br>
+        Zipcode: <strong>{{user.address.zipcode}}</strong><br>
+        Location: <strong>{{user.address.geo.lat}},{{user.address.geo.lng}}</strong><br>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+
+
+

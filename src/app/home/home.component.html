@@ -1,0 +1,34 @@
+<div>
+    <h1 class="titleHome">Monsters Rolodex </h1>
+    <!-- <p><input class="search" placeholder="Search Monsters" [(ngModel)]="searchKey"/><p> -->
+
+      <form [formGroup]="searchForm">
+        <input
+        class="search"
+          [value]="searchKey"
+          formControlName="searchKey"
+          placeholder="Search Monsters">
+      </form>
+<br>
+      <div class="loadingText" *ngIf="searchKey">Found monsters : {{(userList | search:searchKey).length}}</div>
+    <div class="loadingText" *ngIf='!userList.length && !networkError;else showUsers'>Loading users</div>
+    <div class="errorText" *ngIf="networkError">Network error, Please try again</div>
+    <ng-template #showUsers>
+    <div class="flex-container">
+        <div *ngFor="let item of userList | search:searchKey" (click)="itemclick(item)">
+            <div class="card" >
+                <img src="{{getImage(item.id)}}" alt="Avatar" style="width:93%; height:100%; align-self: center;" >
+                <div class="container">
+                    <h3><b>{{item.name}}</b></h3>
+                    <p style="font-size: 14px;">{{item.email | lowerCaseApp}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </ng-template>
+</div>
+<br>
+<br>
+<button class="host" *ngIf="showGoToTop" (click)="gotoTop()">
+  <img src="assets/up-arrow-icon.jpg" alt="buttonpng" />
+</button>

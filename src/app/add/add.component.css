@@ -1,0 +1,59 @@
+/* .container {
+  width: 200px;
+}
+.flex {
+  display: flex;
+}
+.sameRow {
+  border: 2px solid black;
+  height: 40px;
+  width: 100%;
+} */
+
+.container {
+  width: 60%;
+  height: 9%;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.left {
+  float: left;
+  width: 90%;
+  background-color: aquamarine;
+  margin: auto;
+  padding: 10px;
+}
+
+.right {
+  float: right;
+  width: 40%;
+  background-color: blanchedalmond;
+  margin: auto;
+  padding: 10px;
+}
+
+.errorMessage {
+  color: red;
+}
+
+.inputField{
+  width: 50%;
+  height: 30px;
+  border: 2px red;
+  border-style: solid;
+  font-size: 20px;
+}
+
+.lableField{
+  font-size: 20px;
+}
+
+.buttonSubmit{
+  float: right;
+  font-size: 20px;
+  margin-right: 50px;
+  border-radius: 25px;
+  padding: 10px;
+}
