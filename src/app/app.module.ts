@@ -10,7 +10,7 @@ import { AddComponent } from './add/add.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SearchPipe } from './search.pipe';
 import { LowerCasePipe } from './lower-case.pipe';
-import { CardComponent } from './card/card.component';
+import { CardModule } from './card/card.module';
 
 
 @NgModule({
@@ -21,14 +21,18 @@ import { CardComponent } from './card/card.component';
     PageNotFoundComponent,
     SearchPipe,
     LowerCasePipe,
-    CardComponent
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CardModule
+  ],
+  exports: [
+    LowerCasePipe,
   ],
   providers: [LoggerService],
   bootstrap: [AppComponent]

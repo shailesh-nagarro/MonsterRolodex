@@ -10,11 +10,17 @@
   <div class="loadingText" *ngIf='!userList.length && !networkError;else showUsers'>Loading users</div>
   <div class="errorText" *ngIf="networkError">Network error, Please try again</div>
   <ng-template #showUsers>
-   <app-card [userList] = "userList" [searchKey]="searchKey" (searchCountEvent)= "searchResultCounter($event)" (itemClickEvent)="itemClicked($event)"></app-card>
+    <div class="flex-container">
+      <div *ngFor="let item of userList | search:searchKey" (click)="itemclick(item)">
+
+   <app-card [user] = "item"></app-card>
+  </div>
+</div>
+
   </ng-template>
 </div>
 <br>
 <br>
-<button class="host" *ngIf="showGoToTop" (click)="gotoTop()">
+<button class="moveToTop" *ngIf="showGoToTop" (click)="gotoTop()">
   <img src="assets/up-arrow-icon.jpg" alt="buttonpng" />
 </button>

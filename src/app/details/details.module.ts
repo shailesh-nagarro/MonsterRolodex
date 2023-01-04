@@ -7,11 +7,12 @@ import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   declarations: [
-    DetailComponent
+    DetailComponent,
+
   ],
   imports: [
     CommonModule,
-    DetailsRoutingModule
+    DetailsRoutingModule,
   ]
 })
 export class DetailsModule { }

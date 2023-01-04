@@ -17,7 +17,8 @@
       <div class="errorMessage" *ngIf="userName.errors?.['minlength']">
         User name must be at least 5 characters long.
       </div>
-      <div class="errorMessage" *ngIf="userName.invalid && userName && !userName.errors?.['minlength'] && !userName.errors?.['pattern']">
+      <div class="errorMessage"
+        *ngIf="userName.invalid && userName && !userName.errors?.['minlength'] && !userName.errors?.['pattern']">
         User name is required
       </div>
     </div>

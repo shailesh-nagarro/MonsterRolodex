@@ -74,17 +74,17 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  // itemclick(item: Users) {
-  //   this.dataService.putUser(item);
-  //   this.router.navigate(['/detail/' + item.id]);
-  //   console.log("item clicked ", item.id, item.name)
-  // }
-
-  itemClicked(item:Users){
+  itemclick(item: Users) {
     this.dataService.putUser(item);
     this.router.navigate(['/detail/' + item.id]);
     console.log("item clicked ", item.id, item.name)
   }
+
+  // itemClicked(item:Users){
+  //   this.dataService.putUser(item);
+  //   this.router.navigate(['/detail/' + item.id]);
+  //   console.log("item clicked ", item.id, item.name)
+  // }
 
   searchResultCounter(value : any){
   this.searchResultCount = "Monster found :"+value

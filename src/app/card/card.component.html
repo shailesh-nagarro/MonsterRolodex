@@ -1,11 +1,7 @@
-<div class="flex-container">
-  <div *ngFor="let item of userList | search:searchKey" (click)="itemclick(item)">
-    <div class="card">
-      <img src="{{getImage(item.id)}}" alt="Avatar" style="width:93%; height:100%; align-self: center;">
+   <div class="card">
+      <img src="{{getImage(user.id)}}" alt="Avatar">
       <div class="container">
-        <h3><b>{{item.name}}</b></h3>
-        <p style="font-size: 14px;">{{item.email | lowerCaseApp}}</p>
+        <h3><b>{{user.name}}</b></h3>
+        <p style="font-size: 14px;">{{user.email | lowerCaseApp}}</p>
       </div>
     </div>
-  </div>
-</div>
