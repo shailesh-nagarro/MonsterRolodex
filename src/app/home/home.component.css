@@ -1,6 +1,4 @@
-div.gradient {
-  background-image: linear-gradient(to right, red, yellow);
-}
+
 
 .titleHome {
   font-family: 'BigelowRules-Regular';
@@ -9,22 +7,21 @@ div.gradient {
   color: #0cccb5;
 }
 
-
-.zoom {
-  padding: 50px;
-  background-color: green;
-  transition: transform .2s;
-  /* Animation */
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
+.container {
+  padding: 2px 16px;
+  width: 80%;
+  display: inline-block;
+  background-color: #45dada;
+  border-radius: 0 0 15px 15px;
+  text-align: center;
 }
 
-img {
-  border-radius: 15px 15px 0 0;
-  padding: 10px;
-}
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 60px;
 
+}
 
 
 .search {
@@ -56,10 +53,6 @@ img {
   color: #0cccb5;
 }
 
-.gradient {
-  background-image: linear-gradient(to right, red, yellow);
-}
-
 .scrollToTopButton {
   position: fixed;
   bottom: 5px;
@@ -70,23 +63,21 @@ img {
   outline: none;
 }
 
-.host{
+.moveToTop{
   position: fixed;
   float: right;
   cursor: pointer;
   right: 40px;
   bottom: 40px;
-  z-index: 100;
   opacity:0.7;
   background-color: white;
   border-radius: 50%;
-  width: 64px;
+  width: 58px;
+  padding: 10px;
   color: green;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.host:hover{
+.moveToTop:hover{
   transform: scale(1.1);
 }
-
-/* style="align-self: center; text-align: center; width: 40%;" */

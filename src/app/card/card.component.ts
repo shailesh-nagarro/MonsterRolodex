@@ -13,7 +13,7 @@ export class CardComponent {
 
   }
 
-  @Input() userList:Users[] = [] as Users[]
+  @Input() user:Users = {} as Users
 
   @Input() searchKey = ''
 
@@ -21,11 +21,11 @@ export class CardComponent {
 
   @Output() searchCountEvent = new EventEmitter();
 
-  itemclick(item:Users){
-    console.log("item clicked", item);
-    this.itemClickEvent.emit(item)
-    this.searchKey
-  }
+  // itemclick(item:Users){
+  //   console.log("item clicked", item);
+  //   this.itemClickEvent.emit(item)
+  //   this.searchKey
+  // }
 
   getImage(id: any) {
     return this.dataService.getUserImage(id);

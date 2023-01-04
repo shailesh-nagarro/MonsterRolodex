@@ -32,17 +32,13 @@ export class DetailComponent implements OnInit {
       if (user) {
         this.user = user;
         this.image = this.dataService.getUserImage(user.id)
-        // this.address = JSON.stringify(user.address)
       }
     }else {
+      // when user not found in service get user from server
       this.getUserById();
-      // this.dataService.getUserById(this.id);
-      // this.dataService.getUserById(this.id).subscribe((result)=>{
-      //   console.log("user by service ",result);
-      //   this.user = result;
-      // })
     }
   }
+
 
   getUserById(){
     this.dataService.getUserData("users").subscribe((result)=>{
