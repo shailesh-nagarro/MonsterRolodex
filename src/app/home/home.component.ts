@@ -24,8 +24,10 @@ export class HomeComponent implements OnInit {
   userList: Users[] = []
   searchKey = ""
   networkError = false;
-  topPosToStartShowing = 200;
+  topPosToStartShowing = 400;
   showGoToTop = false;
+  searchResultCount = ""
+
   gotoTop() {
     window.scroll({
       top: 0,
@@ -72,13 +74,19 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  getImage(id: any) {
-    return this.dataService.getUserImage(id);
-  }
+  // itemclick(item: Users) {
+  //   this.dataService.putUser(item);
+  //   this.router.navigate(['/detail/' + item.id]);
+  //   console.log("item clicked ", item.id, item.name)
+  // }
 
-  itemclick(item: Users) {
+  itemClicked(item:Users){
     this.dataService.putUser(item);
     this.router.navigate(['/detail/' + item.id]);
     console.log("item clicked ", item.id, item.name)
+  }
+
+  searchResultCounter(value : any){
+  this.searchResultCount = "Monster found :"+value
   }
 }

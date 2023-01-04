@@ -10,6 +10,7 @@ import { AddComponent } from './add/add.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SearchPipe } from './search.pipe';
 import { LowerCasePipe } from './lower-case.pipe';
+import { CardComponent } from './card/card.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { LowerCasePipe } from './lower-case.pipe';
     AddComponent,
     PageNotFoundComponent,
     SearchPipe,
-    LowerCasePipe
+    LowerCasePipe,
+    CardComponent
   ],
   imports: [
     BrowserModule,

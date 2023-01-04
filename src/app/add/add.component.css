@@ -41,7 +41,7 @@
 .inputField{
   width: 50%;
   height: 30px;
-  border: 2px red;
+  border: 2px;
   border-style: solid;
   font-size: 20px;
 }
